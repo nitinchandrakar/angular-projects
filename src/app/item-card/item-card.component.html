@@ -1,0 +1,35 @@
+<div class="card" [ngClass]="{'card-checkout':isCheckout}">
+  <div class="card__image-wrapper">
+    <div class="card__aspect-ratio">
+      <img
+        [src]="data.image"
+        [alt]='data.name'
+      />
+    </div>
+  </div>
+
+  <div class="card__footer">
+    <div class="card__footer--product-details">
+      <div class="product-name">
+        {{ data.name }}
+      </div>
+      <div class="product-price">
+        {{ data.displayPrice }}
+      </div>
+    </div>
+    <div class="card__footer--controls">
+      <div class="card__footer--controls-wrapper">
+        <button (click)="addRemove(-1)">-</button>
+        <input
+          #quantity
+          type="number"
+          [min]="0"
+          [max]="data.max"
+          [value]="data.totalCartItems"
+          readonly
+        />
+        <button (click)="addRemove(1)">+</button>
+      </div>
+    </div>
+  </div>
+</div>

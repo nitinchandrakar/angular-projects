@@ -34,8 +34,9 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss",
-              "node_modules/todomvc-app-css/index.css"
+              "src/styles/grid.scss"
             ],
             "scripts": []
           },
@@ -98,8 +99,9 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss",
-              "node_modules/todomvc-app-css/index.css"
+              "src/styles/grid.scss"
             ],
             "scripts": []
           }

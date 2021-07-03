@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+  <a routerLink="/" class="app-logo">
+    <span>Vending Machine</span>
+  </a>
+  
+  <span class="app-spacer"></span>
+  <ng-container
+    *ngIf="cartService.cartObs$ | async as cartItems; else defaultCart"
+  >
+    <a
+      routerLink="/cart"
+      mat-icon-button
+      color="white"
+      aria-label="shopping cart button"
+    >
+      <mat-icon [matBadge]="getTotalCartCount(cartItems.cartItems)" matBadgeColor="accent"
+        >shopping_cart</mat-icon
+      >
+    </a>
+  </ng-container>
+
+  <ng-template #defaultCart>
+    <a
+      routerLink="/cart"
+      mat-icon-button
+      color="white"
+      aria-label="shopping cart button"
+    >
+      <mat-icon matBadgeColor="accent">shopping_cart</mat-icon>
+    </a>
+  </ng-template>
+</mat-toolbar>

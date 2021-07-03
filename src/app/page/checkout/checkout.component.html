@@ -1,0 +1,14 @@
+<section class="page-wrapper checkout-page">
+  <h3>Checkout</h3>
+  <ng-container
+    *ngIf="cartService.cartObs$ | async as cartItems; else elseBlock"
+  >
+    <ng-container *ngIf="cartItems.cartItems.length > 0; else elseBlock">
+      <app-checkout-form [cartItems]="cartItems"></app-checkout-form>
+    </ng-container>
+  </ng-container>
+  <ng-template #elseBlock
+    >Your Cart is empty
+    <a mat-button color="primary" routerLink="/">Add Product</a></ng-template
+  >
+</section>
